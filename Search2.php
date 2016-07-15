@@ -72,12 +72,12 @@ require("Search2Controller.php");
                                 
 
                                 <?php 
-                            // $Num = count($data);
-                            // if ($Num == 0) {
-                            //     echo "<script>alert('查無資料,請重新查詢!');</script>";
-                            //     header("Refresh:0;url=Index.php");
-                            // }
-                            // else {
+                            $Num = count($data);
+                            if ($Num == 0) {
+                                echo "<script>alert('查無資料,請重新查詢!');</script>";
+                                header("Refresh:0;url=Search1.php");
+                            }
+                            else {
                                 foreach($data as $key => $value)
                                 {
                                 
@@ -100,12 +100,12 @@ require("Search2Controller.php");
                                       $time2 = strtotime(date('Y-m-d H:i:s',time()+8*60*60));
                                   
                                         if ($time1 > $time2) {
-                                    echo '<button type="button" class="btn" onclick="Submi(' . $value['oid'] .')">取消</button>';  
+                                    echo '<button type="button" class="btn" onclick="mysub(' . $value['oid'] .')">取消</button>';  
                                         }
                                     ?>
                                     </td>
                                 </tr>
-                                <?php  }//}?>
+                                <?php  }}?>
                                
                             </tbody>
                         </table>
@@ -116,14 +116,19 @@ require("Search2Controller.php");
 
     
 <?php include('footer.php'); ?>
-    <script>
-        function Submi(oid) {
-            $("#oid").val(oid);
-            // $("#did").val(did);
+    <script type="text/javascript">
+        $(function(){
 
-            // alert(oid);
-            $("form").submit();
-            
+        });
+        
+        function mysub(oid){
+            var r = confirm("是否確定取消?");
+            if (r == true) {
+                $("#oid").val(oid);
+                $("form").submit();
+            } else {
+                    // txt = "You pressed Cancel!";
+            }
         }
     </script>
 </body>
