@@ -121,15 +121,31 @@ require("Search2Controller.php");
 
         });
         
-        function mysub(oid){
-            var r = confirm("是否確定取消?");
-            if (r == true) {
-                $("#oid").val(oid);
-                $("form").submit();
-            } else {
-                    // txt = "You pressed Cancel!";
-            }
-        }
+        // function mysub(oid){
+        //     var r = confirm("是否確定取消?");
+        //     if (r == true) {
+                
+        //         var oid=$("#oid").val(oid);
+        //          $.ajax({
+        //                 url: 'SearchController.php',
+        //                 type: 'POST',
+        //                 data: {
+        //                     oid: oid
+        //                 },
+        //                 // datatype: 'json',
+        //                 error: function(xhr) {
+        //                     alert(xhr.status);
+        //                 },
+        //                 success: function(response) {
+        //                   $("#oid").remove();  
+
+        //                 }
+        //             })
+                // $("form").submit();
+        //     } else {
+        //             // txt = "You pressed Cancel!";
+        //     }
+        // }
     </script>
 </body>
 
