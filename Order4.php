@@ -1,9 +1,8 @@
 <!DOCTYPE HTML>
 <?php
 
-session_start();
 
-$_SESSION["oid"]=$_GET["oid"];
+$oid=$_GET["oid"];
 // echo $_SESSION["oid"]
 require("OrderFinshController.php");
 
@@ -18,7 +17,7 @@ require("OrderFinshController.php");
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.min.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link rel="stylesheet" href="css/order.css" type="text/css" />
+    <link rel="stylesheet" href="css/order4.css" type="text/css" />
 </head>
 
 <body>
@@ -31,11 +30,9 @@ require("OrderFinshController.php");
                 <div class="menu">
                     <ul>
                         <li>
-                            <a href="Index.php">乘車資訊</a>
+                             <a class="active" href="Index.php">查詢及訂票</a>
                         </li>
-                        <li>
-                            <a class="active" href="#">我要訂票</a>
-                        </li>
+                        
                         <li>
                             <a href="#">我的車票</a>
                         </li>
@@ -64,18 +61,24 @@ require("OrderFinshController.php");
                                 <div class="agreeTitle">訂票成功</div>
                                 <div class="agreeContent">
                                     <?php  foreach($data as $key => $val){?>
-                                    <div><span>訂票姓名:</span><?php echo $val['clientName'];?></div>
-                                    <div><span>身分證字號:</span><?php echo $val['clientId'];?></div>
-                                    <div><span>電話:</span><?php echo $val['clientPhone'];?></div>
-                                    <div><span>起站:</span><?php echo $val['start'];?></div>
-                                    <div><span>迄站:</span><?php echo $val['end'];?></div>
-                                    <div><span>乘車時間:</span><?php echo substr($val['time'],0,-3);?></div>
-                                    <div><span>票種:</span><?php echo $val['type'];?></div>
-                                    <div><span>張數:</span><?php echo $val['number'];?></div>
-                                    <div><span>座位:</span><?php echo $val['seat'];?></div>
-                                    <div><span>總共金額:</span><?php echo $val['total'];?></div>
-                                    <div><span>訂票時間:</span><?php echo $val['orderTime'];?></div>
-                                    <div><span>取票代碼:</span><?php echo $val['ticrand'];?></div>
+                                    <div class="marginB"><span>訂票姓名:</span><?php echo $val['clientName'];?></div>
+                                    <div class="marginB"><span>身分證字號:</span><?php echo $val['clientId'];?></div>
+                                    <div class="marginB"><span>電話:</span><?php echo $val['clientPhone'];?></div>
+                                    <div class="marginB"><span>票種:</span><?php echo $val['type'];?></div>
+                                    <div class="marginB"><span>張數:</span><?php echo $val['number'];?></div>
+                                    <div><span class="f">--車程:<?php echo $val['start'];?> - <?php echo $val['end'];?></span></div>
+                                    <!--<div class="marginB"><span>起站:</span><?php echo $val['start'];?></div>-->
+                                    <!--<div class="marginB"><span>迄站:</span><?php echo $val['end'];?></div>-->
+                                    <div class="marginB"><span>乘車日期:</span><?php echo $val['date'];?></div>
+                                    <div class="marginB"><span>乘車時間:</span><?php echo substr($val['time'],0,-3);?></div>
+                                    
+                                    
+                                    <div class="marginB"><span>座位:</span><?php echo $val['seat'];?></div>
+                                    <div class="marginB"><span>訂票時間:</span><?php echo $val['orderTime'];?></div>
+                                    <div class="marginB"><span>總共金額:</span><?php echo $val['total'];?></div>
+                                    
+                                    <div>------------------------------------------------------</div>
+                                    <div class="marginB"><span style="color:red;">取票代碼:</span><?php echo $val['ticrand'];?></div>
                                   <?php }?>
                                 </div>
                             </div>

@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
-<?php require("ListController.php");?>
-
+<?php
+require("Search2Controller.php");
+?>
 <html>
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>路線時刻</title>
@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.min.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link rel="stylesheet" href="css/list.css" type="text/css" />
+    <link rel="stylesheet" href="css/search2.css" type="text/css" />
 </head>
 
 <body>
+    
     <div class="header">
         <div class="container">
             <div class="logo">
@@ -23,11 +24,11 @@
             <div class="menu">
                 <ul>
                     <li>
-                        <a class="active" href="Index.php">查詢及訂票</a>
+                        <a  href="Index.php">查詢及訂票</a>
                     </li>
                   
                     <li>
-                        <a href="#">我的車票</a>
+                        <a class="active">我的車票</a>
                     </li>
                     <li>
                         <a href="#">連絡我們</a>
@@ -53,30 +54,30 @@
                         <table class="table">
                             <thead>
                                 <div class="back">
-                                <input type="button" onclick="history.back()" class="btn" value="回首頁重新查詢"/>
+                                <input type="button" onclick="history.back()" class="btn" value="回上頁重新查詢"/>
                                 </div>
                                 <tr>
                                     <th>起站</th>
                                     <th>迄站</th>
                                     <th>日期</th>
                                     <th>發車時間</th>
-                                    <th>全票</th>
-                                    <th>半票</th>
-                                    <th>來回票</th>
-                                    <th>剩餘座位數</th>
-                                    <th></th>
+                                    <th>票種</th>
+                                    <th>張數</th>
+                                    <th>座位</th>
+                                    <th>總金額</th>
+                                    <th>取票代碼</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 
 
                                 <?php 
-                            $Num = count($data);
-                            if ($Num == 0) {
-                                echo "<script>alert('查無資料,請重新查詢!');</script>";
-                                header("Refresh:0;url=Index.php");
-                            }
-                            else {
+                            // $Num = count($data);
+                            // if ($Num == 0) {
+                            //     echo "<script>alert('查無資料,請重新查詢!');</script>";
+                            //     header("Refresh:0;url=Index.php");
+                            // }
+                            // else {
                                 foreach($data as $key => $value)
                                 {
                                 
@@ -85,57 +86,42 @@
                                 <tr>
                                     <td><?php echo $value['start'];?></td>
                                     <td><?php echo $value['end'];?></td>
-                                    <td><?php echo $value['date']?></td>
+                                    <td><?php echo $value['date'];?></td>
                                     <td><?php echo substr($value['time'],0,-3);?></td>
-                                    <td><?php echo $value['onePrice']?></td>
-                                    <td><?php echo $value['halfFare']?></td>
-                                    <td><?php echo $value['backAndForth']?></td>
-                                    <td><?php echo 30 - (int)$value['Seated'] ?></td>
+                                    <td><?php echo $value['type'];?></td>
+                                    <td><?php echo $value['number']?></td>
+                                    <td><?php echo $value['seat']?></td>
+                                    <td><?php echo $value['total']?></td>
+                                    <td><?php echo $value['ticrand'] ?></td>
                                     <td>
+                                     <td>
                                     <?php
-                                       $time1 = strtotime ( $value['date'].$value['time'] );
-                                       $time2 = strtotime(date('Y-m-d H:i:s',time()+8*60*60));
-                                    //   echo $value['date'].$value['time'],"<br>";
-                                    //   echo date('Y-m-d H:i:s',time()+8*60*60);
+                                      $time1 = strtotime ( $value['date'].$value['time'] );
+                                      $time2 = strtotime(date('Y-m-d H:i:s',time()+8*60*60));
+                                  
                                         if ($time1 > $time2) {
-                                            echo '<button type="button" class="btn" onclick="SubmitForm(' . $value['sid'] .',' . $value['did'] .')">訂票</button>';  
+                                    echo '<button type="button" class="btn" onclick="Submi(' . $value['oid'] .')">取消</button>';  
                                         }
                                     ?>
                                     </td>
                                 </tr>
-                                <?php } }?>
+                                <?php  }//}?>
                                
-                                
                             </tbody>
                         </table>
-                        
-                        
-                        
-                        <form method="post" action="Order1.php" >
-                            <input type="hidden" id="sid" name="sid" />
-                            <input type="hidden" id="did" name="did" />
-                        </form>
-                        <!--<form method="post" action="seatController.php" id="form2">-->
-                        <!--    <input type="hidden" id="sid1" name="sid" />-->
-                        <!--    <input type="hidden" id="did1" name="did" />-->
-                        <!--</form>-->
-                       
-                    </div>
-                     
-                </div>
-            </div>
-        </div>
-    </div>
-   
-     
+                            <form method="post" action="SearchController.php">
+                                <input type="hidden" id="oid" name="oid" />
+                                <!--<input type="hidden" id="did" name="did" />-->
+                            </form>
 
-    <?php include('footer.php'); ?>
+    
+<?php include('footer.php'); ?>
     <script>
-        function SubmitForm(sid, did) {
-            $("#sid").val(sid);
-            $("#did").val(did);
+        function Submi(oid) {
+            $("#oid").val(oid);
+            // $("#did").val(did);
 
-            // alert(sid,did);
+            // alert(oid);
             $("form").submit();
             
         }

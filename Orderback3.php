@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<?php require("Order3Controller.php");?>
+<?php require("Orderback3Controller.php");?>
 
 <html>
 
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <form method="post" action="Order4Controller.php">
+    <form method="post" action="Orderback4Controller.php">
     <div class="header">
         <div class="container">
             <div class="logo">
@@ -59,32 +59,22 @@
                             </div>
                             <div class="clearfix"></div>
                             <div class="ImOne">
-                                <label>日期：</label><?php echo $date;?>
+                                <label>日期：</label><?php echo $value['date'];?>
                             </div>
                             <div class="ImOne">
-                                <label>時間：</label><?php echo $time;?>
+                                <label>時間：</label><?php echo substr($value['time'],0,-3);?>
                             </div>
                             <div class="clearfix"></div>
                             <div class="ImOne">
                                 <label>票種：</label>
-                                <label ><?php echo $ticket;?></label>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="ImOne">
-                                <label>票價：</label>
-                                <span><?php echo $price?></span>
+                                <label >來回票-回程</label>
                             </div>
                             <div class="clearfix"></div>
                             <div class="ImOne">
                                 <label>張數：</label>
-                                <label id="TicketNum" ><?php echo $num;?></label>
+                                <label id="TicketNum" ><?php echo $TicketNumr;?></label>
                             </div>
-                            <div class="clearfix"></div>
-                            <div class="ImOne TotalPrice">
-                                <label>總金額：</label>
-                                <label id="TotalPrice" name="total"><?php echo $total;?></label>
-                            </div>
-                            
+                           
                             <div class="clearfix"></div>
                         </div>
                         <?php }?>
@@ -244,16 +234,11 @@
 
     <input type="hidden" id='sid' name="sid" value="<?php echo $_POST['sid'];?>"/>
     <input type="hidden" id='did' name="did" value="<?php echo $_POST['did'];?>"/>
-    <input type="hidden" id='clientId' name="clientId" value="<?php echo $_POST['clientId'];?>"/>
-    <input type="hidden" id='name' name="name" value="<?php echo $_POST['name'];?>"/>
-    <input type="hidden" id='phone' name="phone" value="<?php echo $_POST['phone'];?>"/>
     <input type="hidden" id="nnum" name="nnum" value="<?php echo $res1 ?>"/>
     <input type="hidden" id="snum" name="snum" value=""/>
-    <input type="hidden" id="ticket" name="ticket"value="<?php echo $ticket?>"/>
-    <input type="hidden" id="TicketNum" name="TicketNum"value="<?php echo $num;?>"/>
-    <input type="hidden" id="TotalPrice" name="TotalPrice" value="<?php echo $total;?>"/>
-    <input type="hidden" id="backstart" name="backstart" value="<?php echo $value['end'];?>"/>
-    <input type="hidden" id="backend" name="backend" value="<?php echo $value['start'];?>"/>
+    <input type="hidden" id='oid' name="oid" value="<?php echo $_POST['oid'];?>"/>
+    <input type="hidden" id="TicketNum" name="TicketNum"value="<?php echo $TicketNumr;?>"/>
+
     
     <?php include('footer.php'); ?>
     
@@ -303,10 +288,6 @@
                 } else {
                     $("#snum").val(snum);
                     $("form").submit();
-                }
-                
-                if($("#ticket").val == "來回票-去程"){
-                    window.location.href='Orderback.php';
                 }
            });
            

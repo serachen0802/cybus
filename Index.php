@@ -23,13 +23,11 @@
                     <div class="menu">
                         <ul>
                             <li>
-                                <a class="active">乘車資訊</a>
+                                <a class="active">查詢及訂票</a>
                             </li>
+                            
                             <li>
-                                <a href="Order2.php">我要訂票</a>
-                            </li>
-                            <li>
-                                <a href="#">我的車票</a>
+                                <a href="Search1.php">我的車票</a>
                             </li>
                             <li>
                                 <a href="#">連絡我們</a>
@@ -124,8 +122,10 @@
                     var now = new Date();
                     var orderdate = new Date($("#orderdate").val());
                     
-                    if (orderdate < now) {
+                    if (orderdate+1 < now) {
                         alert("請輸入正確日期");
+                        alert(now);
+                        
                     }
                     else if ($("#ordertime1").val() != "" && $("#ordertime2").val() !="" ) {
                         var ordertime1 = new Date(now.toDateString() + " " + $("#ordertime1").val() );

@@ -1,4 +1,12 @@
 <!DOCTYPE HTML>
+<?php //require("seatController.php");?>
+<?php
+if($_POST['sid']==""){
+   echo "<script>alert('請選擇車次');</script>";
+    header("Refresh:0;url=Index.php");
+    
+}
+?>
 <html>
 
 <head>
@@ -22,11 +30,9 @@
                 <div class="menu">
                     <ul>
                         <li>
-                            <a href="Index.php">乘車資訊</a>
+                             <a class="active" href="Index.php">查詢及訂票</a>
                         </li>
-                        <li>
-                            <a class="active" href="#">我要訂票</a>
-                        </li>
+                        
                         <li>
                             <a href="#">我的車票</a>
                         </li>

@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<?php require("ListController.php");?>
+<?php require("Orderback2Controller.php");?>
 
 <html>
 
@@ -52,17 +52,14 @@
                     <div class="block">
                         <table class="table">
                             <thead>
-                                <div class="back">
-                                <input type="button" onclick="history.back()" class="btn" value="回首頁重新查詢"/>
-                                </div>
+                                <!--<div class="back">-->
+                                <div type="text" class="ba" value="">--請選擇回程時間--</div>
+                                <!--</div>-->
                                 <tr>
                                     <th>起站</th>
                                     <th>迄站</th>
                                     <th>日期</th>
                                     <th>發車時間</th>
-                                    <th>全票</th>
-                                    <th>半票</th>
-                                    <th>來回票</th>
                                     <th>剩餘座位數</th>
                                     <th></th>
                                 </tr>
@@ -71,12 +68,12 @@
                                 
 
                                 <?php 
-                            $Num = count($data);
-                            if ($Num == 0) {
-                                echo "<script>alert('查無資料,請重新查詢!');</script>";
-                                header("Refresh:0;url=Index.php");
-                            }
-                            else {
+                            // $Num = count($data);
+                            // if ($Num == 0) {
+                            //     echo "<script>alert('查無資料,請重新查詢!');</script>";
+                            //     header("Refresh:0;url=Index.php");
+                            // }
+                            // else {
                                 foreach($data as $key => $value)
                                 {
                                 
@@ -87,12 +84,8 @@
                                     <td><?php echo $value['end'];?></td>
                                     <td><?php echo $value['date']?></td>
                                     <td><?php echo substr($value['time'],0,-3);?></td>
-                                    <td><?php echo $value['onePrice']?></td>
-                                    <td><?php echo $value['halfFare']?></td>
-                                    <td><?php echo $value['backAndForth']?></td>
                                     <td><?php echo 30 - (int)$value['Seated'] ?></td>
-                                    <td>
-                                    <?php
+                                    <td><?php
                                        $time1 = strtotime ( $value['date'].$value['time'] );
                                        $time2 = strtotime(date('Y-m-d H:i:s',time()+8*60*60));
                                     //   echo $value['date'].$value['time'],"<br>";
@@ -100,10 +93,9 @@
                                         if ($time1 > $time2) {
                                             echo '<button type="button" class="btn" onclick="SubmitForm(' . $value['sid'] .',' . $value['did'] .')">訂票</button>';  
                                         }
-                                    ?>
-                                    </td>
+                                    ?></td>
                                 </tr>
-                                <?php } }?>
+                                <?php  }?>
                                
                                 
                             </tbody>
@@ -111,9 +103,10 @@
                         
                         
                         
-                        <form method="post" action="Order1.php" >
+                        <form method="post" action="Orderback3.php" >
                             <input type="hidden" id="sid" name="sid" />
                             <input type="hidden" id="did" name="did" />
+                            <input type="hidden" name="oid" value="<?php echo $oid;?>"/>
                         </form>
                         <!--<form method="post" action="seatController.php" id="form2">-->
                         <!--    <input type="hidden" id="sid1" name="sid" />-->
@@ -134,8 +127,8 @@
         function SubmitForm(sid, did) {
             $("#sid").val(sid);
             $("#did").val(did);
-
-            // alert(sid,did);
+       
+            
             $("form").submit();
             
         }

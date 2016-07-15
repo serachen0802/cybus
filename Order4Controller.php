@@ -2,6 +2,9 @@
 header("Content-Type:text/html; charset=utf-8");
 require("connect/connect.php");
 
+
+
+
 $sid=$_POST['sid'];
 $did=$_POST['did'];
 $clientId=$_POST['clientId'];
@@ -12,20 +15,41 @@ $seat=$_POST['snum'];
 $ordertime=date("Y-m-d h:i:s");
 //全票.半票.來回
 $ticket=$_POST['ticket'];
+$ticket1=$_POST['ticket'];
 //張數
 $TicketNumr=$_POST['TicketNum'];
 //總金額
 $TotalPrice=$_POST['TotalPrice'];
 //取票代碼
-$date=date("Y-m-d");
-$ticrand=strtotime($date).substr($clientId,0,3);
-echo $ticrand;
+$date=date("Y-m-d H:i");
+$ticrand=substr(strtotime($date),-7).substr($clientId,-3);
+$backstart=$_POST['backstart'];
+$backend=$_POST['backend'];
+
 
 // mysql_query("INSERT INTO Corder (sid, did, clientId,clientName,clientPhone,,seat,orderTime,type,number,total) 
 // VALUES ('$sid', '$did', '$clientId','$name','$phone','$seat','$ordertime','$ticket','$TicketNumr','$TotalPrice')");
 
 // 新增
 // 將購買資料存入資料庫
+//     $a = $db->query(" SELECT *
+//     FROM BusDate INNER JOIN BusSchedule ON BusSchedule.sid=BusDate.sid WHERE BusDate.date='".$backdate."' 
+//     AND BusSchedule.start='".$backstart."'
+//     AND BusSchedule.end='".$backend."'");
+//     $data = $a->fetchAll(PDO::FETCH_ASSOC);
+//     foreach($data as $key => $value){
+//         $backdate = $value['date'];
+//             }
+//             if($backdate== ""){
+//         echo "<script>alert('此班車無回程,請購買單程票');</script>";
+//         header('location:Order2.php');
+//             }else{
+
+if($ticket="來回票-去程"){
+    $ticket="來回票";
+}
+
+
 $tins = $db->prepare("insert into `Corder` " .
             "(`sid`,`did`,`clientId`,`clientName`,`clientPhone`,`seat`,`orderTime`,`type`,`number`,`total`,`ticrand`)".
             "values(:sid,:did,:clientId,:clientName,:clientPhone,:seat,:orderTime,:type,:number,:total,:ticrand)"
@@ -47,17 +71,26 @@ $tins->execute(array(
         $oid = $db->lastInsertId();
 
     
-        
-
-
-        
-        
-        // https://lab-sera-chen.c9users.io/cyBus/Order4.php
-
+    
+    
 
 // $oid =mysql_insert_id();
-
-header('location:Order4.php?oid='.$oid);
-
-
+if($ticket1=="來回票-去程"){
+  header('location:Orderback1.php?oid='.$oid);
+    }else{
+        header('location:Order4.php?oid='.$oid);
+    }
 ?>
+<!--<html>-->
+<!--    <head>-->
+        
+<!--    </head>-->
+<!--    <body>-->
+<!--        <form method="post" action="Orderback1.php">-->
+<!--        <input type="hidden" name="oid" value=""/> -->
+<!--        </form>-->
+<!--    </body>-->
+<!--</html>-->
+<!--<script>-->
+<!--     $("form").submit();-->
+<!--</script>-->

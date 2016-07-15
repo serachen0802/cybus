@@ -1,5 +1,7 @@
 <!DOCTYPE HTML>
 <?php require("Order2Controller.php");?>
+
+
 <html>
 
 <head>
@@ -23,11 +25,9 @@
             <div class="menu">
                 <ul>
                     <li>
-                        <a href="Index.php">乘車資訊</a>
+                        <a class="active" href="Index.php">查詢及訂票</a>
                     </li>
-                    <li>
-                        <a class="active" href="#">我要訂票</a>
-                    </li>
+                    
                     <li>
                         <a href="#">我的車票</a>
                     </li>
@@ -107,7 +107,7 @@
                             <input type="hidden" id='name' name="name" value="<?php echo $_POST['name'];?>"/>
                             <input type="hidden" id='clientId' name="clientId" value="<?php echo $_POST['clientId'];?>"/>
                             <input type="hidden" id='phone' name="phone" value="<?php echo $_POST['phone'];?>"/>
-                            <input type="hidden" id='total' name="total"/>
+                            <!--<input type="hidden" id='total' name="total"/>-->
                             <input type="hidden" name="time" value='<?php echo substr($value['time'],0,-3);?>'/>
                             <input type="hidden" id='date' name="date" value="<?php echo $value['date']; ?>"/>
                             <input type="hidden" id='start' name="start" value="<?php echo $value['start']; ?>"/>
@@ -119,6 +119,7 @@
             </div>
         </div>
     </div>
+   
     
     <?php include('footer.php'); ?>
     

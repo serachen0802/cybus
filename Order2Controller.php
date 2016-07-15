@@ -32,9 +32,4 @@ $phone=$_POST['phone'];
 
 
 
-
-
-
-
-
 ?>

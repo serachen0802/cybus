@@ -1,6 +1,14 @@
 <?php
+
+
 header("Content-Type:text/html; charset=utf-8");
 require("connect/connect.php");
+
+if($_POST['price']==""){
+  echo "<script>alert('請選擇票種張數');</script>";
+    header("Refresh:0;url=Index.php");
+}
+
 $price=$_POST['price'];
 $sid=$_POST['sid'];
 $did=$_POST['did'];
@@ -9,13 +17,16 @@ $time=$_POST['time'];
 $name=$_POST['name'];
 $phone=$_POST['phone'];
 $num=$_POST['num'];//張數
-$total=$_POST['total'];//總金額
+
+$Inum=(Int)$num;
+$Iprice=(Int)$price;
+$total=$Inum * $Iprice ;//總金額
 // echo $total;
 // echo $num;
 // echo $sid.$did;
 // echo $phone;
-// $sid='1';
-// $did='1';
+
+// var_dump($Iprice);
 
     $a = $db->query(" SELECT * FROM BusDate INNER JOIN BusSchedule ON BusDate.sid=BusSchedule.sid
     WHERE BusDate.sid='".$sid. "' and BusDate.did='".$did."'");
@@ -27,7 +38,8 @@ $total=$_POST['total'];//總金額
         }else if($price==$value['halfFare']){
             $ticket="半票";
         }else if($price==$value['backAndForth']){
-            $ticket="來回票";
+            $ticket="來回票-去程";
+            
         }
     }
     // echo $value['onePrice'];    
@@ -45,7 +57,8 @@ $total=$_POST['total'];//總金額
     // var_dump ($res1);
     $output = explode(",", $res1);
     // var_dump($output);
-    // echo json_encode($output);
+    // echo json_encode($output);  
+   
 
 
 

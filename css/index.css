@@ -58,7 +58,7 @@ h1 {
 }
 /*字體*/
 .menu ul li a {
-    padding: 38px 7px 20px 7px;
+    padding: 3 px 7px 20px 7px;
     color: #3E2113;
     font-size: 14px;
     font-weight: 900;
@@ -70,7 +70,7 @@ h1 {
 
 /*被選擇清單背景*/
 .menu ul li a:hover, .menu ul li a.active {
-    background: #4C3124;
+    background: #009FCC;
     color: #FFFFFF;
 }
 
