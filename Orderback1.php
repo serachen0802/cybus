@@ -37,7 +37,7 @@ require("Orderback1Controller.php");
                         </li>
 
                         <li>
-                            <a href="#">我的車票</a>
+                            <a href="Search1.php">我的車票</a>
                         </li>
                         <li>
                             <a href="#">連絡我們</a>
@@ -63,8 +63,8 @@ require("Orderback1Controller.php");
                         <div class="block">
 
                             <div type="text" class="ba" value="">--請選擇回程日期--</div>
-                            <div class="bas"><span>起站:  <?php echo $end; ?></span></div>
-                            <div class="bas"><span>迄站:  <?php echo $start; ?></span></div>
+                            <div class="bas"><span>起站 :  <?php echo $end; ?></span></div>
+                            <div class="bas"><span>迄站 :  <?php echo $start; ?></span></div>
                             <div class="FormOne">
                                 <div class="FormLeft">
                                     <p>日期:</p>

@@ -32,7 +32,7 @@ require("OrderbackFinsh.php");
                         </li>
                         
                         <li>
-                            <a href="#">我的車票</a>
+                            <a href="Search1.php">我的車票</a>
                         </li>
                         <li>
                             <a href="#">連絡我們</a>
@@ -59,30 +59,32 @@ require("OrderbackFinsh.php");
                                 <div class="agreeTitle">訂票成功</div>
                                 <div class="agreeContent">
                                     
-                                    <div class="marginB"><span>訂票姓名:</span><?php echo $oid['clientName'];?></div>
-                                    <div class="marginB"><span>身分證字號:</span><?php echo $oid['clientId'];?></div>
-                                    <div class="marginB"><span>電話:</span><?php echo $oid['clientPhone'];?></div>
-                                    <div class="marginB"><span>票種:</span><?php echo $oid['type'];?></div>
-                                    <div class="marginB"><span>張數:</span><?php echo $oid['number'];?></div>
+                                    <div class="marginB"><span>訂票姓名 :  </span><?php echo "  ".$oid['clientName'];?></div>
+                                    <div class="marginB"><span>身分證字號 :  </span><?php echo $oid['clientId'];?></div>
+                                    <div class="marginB"><span>電話 :  </span><?php echo $oid['clientPhone'];?></div>
+                                    <div class="marginB"><span>票種 :  </span><?php echo $oid['type'];?></div>
+                                    <div class="marginB"><span>張數 :  </span><?php echo $oid['number'];?></div>
         
-                                    <div><span class="f">--去程:<?php echo $oid['start'];?> - <?php echo $oid['end'];?></span></div>
+                                    <div><span class="f">--去程 :  <?php echo $oid['start'];?> - <?php echo $oid['end'];?></span></div>
                                     <div class="marginc"><span> </span></div>
                                     <!--<div class="marginB"><span>起站:</span></div>-->
                                     <!--<div class="marginB"><span>迄站:</span></div>-->
-                                    <div class="marginB"><span>乘車日期:</span><?php echo $oid['date'];?></div>
-                                    <div class="marginB"><span>乘車時間:</span><?php echo substr($oid['time'],0,-3);?></div>
-                                    <div class="marginB"><span>座位:</span><?php echo $oid['seat'];?></div>
-                                    <div><span  class="f">--回程:<?php echo $oid2['start'];?> - <?php echo $oid2['end'];?></span></div>
+                                    <div class="marginB"><span>乘車日期 :  </span><?php echo $oid['date'];?></div>
+                                    <div class="marginB"><span>乘車時間 :  </span><?php echo substr($oid['time'],0,-3);?></div>
+                                    <div class="marginB"><span>座位 :  </span><?php echo $oid['seat'];?></div>
+                                    <div><span  class="f">--回程 :  <?php echo $oid2['start'];?> - <?php echo $oid2['end'];?></span></div>
                                     <div class="marginc"><span> </span></div>
                                     <!--<div class="marginB"><span>起站:</span></div>-->
                                     <!--<div class="marginB"><span>迄站:</span></div>-->
-                                    <div class="marginB"><span>乘車日期:</span><?php echo $oid2['date'];?></div>
-                                    <div class="marginB"><span>乘車時間:</span><?php echo substr($oid2['time'],0,-3);?></div>
-                                    <div class="marginB"><span>座位:</span><?php echo $oid2['seat'];?></div>
-                                    <div class="marginB"><span>訂票時間:</span><?php echo $oid['orderTime'];?></div>
-                                    <div class="marginB"><span>總共金額:</span><?php echo $oid['total'];?></div>
+                                    <div class="marginB"><span>乘車日期 :  </span><?php echo $oid2['date'];?></div>
+                                    <div class="marginB"><span>乘車時間 :  </span><?php echo substr($oid2['time'],0,-3);?></div>
+                                    <div class="marginB"><span>座位 :  </span><?php echo $oid2['seat'];?></div>
+                                    <div class="marginB"><span>訂票時間 :  </span><?php echo $oid['orderTime'];?></div>
+                                    <div class="marginB"><span>總共金額 :  </span><?php echo $oid['total'];?></div>
                                     <div>------------------------------------------------------</div>
-                                    <div class="marginB" ><span style="color:red;">取票代碼:</span><?php echo $oid['ticrand'];?></div>
+                                    <div class="marginB" ><span style="color:red;">取票代碼 :  </span><?php echo $oid['ticrand'];?></div>
+                                    
+                                    *請於三日內，使用此代碼至便利商店輸入後取票
                                   <?php //}?>
                                 </div>
                             </div>

@@ -28,7 +28,7 @@ require("Search2Controller.php");
                     </li>
                   
                     <li>
-                        <a class="active">我的車票</a>
+                        <a class="active" href="Search1.php">我的車票</a>
                     </li>
                     <li>
                         <a href="#">連絡我們</a>
@@ -72,18 +72,19 @@ require("Search2Controller.php");
                                 
 
                                 <?php 
-                            $Num = count($data);
-                            if ($Num == 0) {
-                                echo "<script>alert('查無資料,請重新查詢!');</script>";
-                                header("Refresh:0;url=Search1.php");
-                            }
-                            else {
-                                foreach($data as $key => $value)
-                                {
-                                
-                                
+                                    $Num = count($data);
+                                    if ($Num == 0) {
+                                        echo "<script>alert('查無資料,請重新查詢!');</script>";
+                                        header("Refresh:0;url=Search1.php");
+                                    }
+                                    else {
+                                        foreach($data as $key => $value)
+                                        {
+                                        $time1 = strtotime ( $value['date'].$value['time'] );
+                                        $time2 = strtotime(date('Y-m-d H:i:s',time()+8*60*60));
+                                        if ($time1 > $time2) {
                                 ?>
-                                <tr>
+                                <tr id="<?php echo $value['oid'] ?>">
                                     <td><?php echo $value['start'];?></td>
                                     <td><?php echo $value['end'];?></td>
                                     <td><?php echo $value['date'];?></td>
@@ -94,60 +95,41 @@ require("Search2Controller.php");
                                     <td><?php echo $value['total']?></td>
                                     <td><?php echo $value['ticrand'] ?></td>
                                     <td>
-                                     <td>
-                                    <?php
-                                      $time1 = strtotime ( $value['date'].$value['time'] );
-                                      $time2 = strtotime(date('Y-m-d H:i:s',time()+8*60*60));
-                                  
-                                        if ($time1 > $time2) {
-                                    echo '<button type="button" class="btn" onclick="mysub(' . $value['oid'] .')">取消</button>';  
-                                        }
-                                    ?>
+                                    <td>
+                                        <button type="button" class="btn" onclick="mysub(<?php echo $value['oid'] ?>)">取消</button>
                                     </td>
                                 </tr>
-                                <?php  }}?>
+                                <?php }}} ?>
                                
                             </tbody>
                         </table>
-                            <form method="post" action="SearchController.php">
-                                <input type="hidden" id="oid" name="oid" />
-                                <!--<input type="hidden" id="did" name="did" />-->
-                            </form>
-
-    
 <?php include('footer.php'); ?>
     <script type="text/javascript">
-        $(function(){
+        function mysub(oid){
+            var r = confirm("是否確定取消?");
+            
+            if (r == true) {
+                // var oid3=$("#oid3").val(oid);
+                 $.ajax({
+                        url: 'SearchController.php',
+                        type: 'POST',
+                        data: {
+                            oid: oid
+                        },
+                        // datatype: 'json',
+                        error: function(xhr) {
+                            alert(xhr.status);
+                        },
+                        success: function(response) {
+                          $("tr#" + oid).remove();  
 
-        });
-        
-        // function mysub(oid){
-        //     var r = confirm("是否確定取消?");
-        //     if (r == true) {
-                
-        //         var oid=$("#oid").val(oid);
-        //          $.ajax({
-        //                 url: 'SearchController.php',
-        //                 type: 'POST',
-        //                 data: {
-        //                     oid: oid
-        //                 },
-        //                 // datatype: 'json',
-        //                 error: function(xhr) {
-        //                     alert(xhr.status);
-        //                 },
-        //                 success: function(response) {
-        //                   $("#oid").remove();  
-
-        //                 }
-        //             })
-                // $("form").submit();
-        //     } else {
-        //             // txt = "You pressed Cancel!";
-        //     }
-        // }
+                        }
+                    });
+               
+            } else {
+                    // txt = "You pressed Cancel!";
+            }
+        }
     </script>
 </body>
-
-
 </html>

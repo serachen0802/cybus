@@ -4,9 +4,9 @@
 }
 
 .agreeTitle {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 900;
-    font-family: 標楷體;
+    /*font-family:PMingLiU;*/
     text-align: center;
     padding-bottom: 15px;
     margin-bottom: 20px;
@@ -14,7 +14,7 @@
 }
 
 .agreeContent {
-    font-family: 標楷體;
+    /*font-family:PMingLiU ;*/
     font-size: 15px;
     padding: 2% 5%;
 }
@@ -43,3 +43,19 @@
     float: right;
     margin-top: 15px;
 } 
+dt{
+    PADDING-TOP: 5px;
+    PADDING-RIGHT: 20px;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 20px;
+    BORDER-LEFT: #cccccc 1px solid;
+    BORDER-BOTTOM: #cccccc 1px solid;
+    /* FONT-SIZE: 15px; */
+    FONT-WEIGHT: bold;
+    COLOR: #A42D00;
+    BACKGROUND: #DCDCDC;
+}
+dd{
+    display: block;
+    -webkit-margin-start: 40px;
+}

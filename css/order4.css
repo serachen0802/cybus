@@ -6,7 +6,7 @@
 .agreeTitle {
     font-size: 24px;
     font-weight: 900;
-    font-family: 標楷體;
+    /*font-family: 標楷體;*/
     text-align: center;
     padding-bottom: 15px;
     margin-bottom: 20px;
@@ -14,7 +14,7 @@
 }
 
 .agreeContent {
-    font-family: 標楷體;
+    /*font-family: 標楷體;*/
     font-size: 20px;
     padding: 2% 13%;
 }

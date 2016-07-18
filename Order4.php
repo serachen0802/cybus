@@ -34,7 +34,7 @@ require("OrderFinshController.php");
                         </li>
                         
                         <li>
-                            <a href="#">我的車票</a>
+                            <a href="Search1.php">我的車票</a>
                         </li>
                         <li>
                             <a href="#">連絡我們</a>
@@ -61,24 +61,23 @@ require("OrderFinshController.php");
                                 <div class="agreeTitle">訂票成功</div>
                                 <div class="agreeContent">
                                     <?php  foreach($data as $key => $val){?>
-                                    <div class="marginB"><span>訂票姓名:</span><?php echo $val['clientName'];?></div>
-                                    <div class="marginB"><span>身分證字號:</span><?php echo $val['clientId'];?></div>
-                                    <div class="marginB"><span>電話:</span><?php echo $val['clientPhone'];?></div>
-                                    <div class="marginB"><span>票種:</span><?php echo $val['type'];?></div>
-                                    <div class="marginB"><span>張數:</span><?php echo $val['number'];?></div>
-                                    <div><span class="f">--車程:<?php echo $val['start'];?> - <?php echo $val['end'];?></span></div>
-                                    <!--<div class="marginB"><span>起站:</span><?php echo $val['start'];?></div>-->
-                                    <!--<div class="marginB"><span>迄站:</span><?php echo $val['end'];?></div>-->
-                                    <div class="marginB"><span>乘車日期:</span><?php echo $val['date'];?></div>
-                                    <div class="marginB"><span>乘車時間:</span><?php echo substr($val['time'],0,-3);?></div>
+                                    <div class="marginB"><span>訂票姓名 :  </span><?php echo $val['clientName'];?></div>
+                                    <div class="marginB"><span>身分證字號 :  </span><?php echo $val['clientId'];?></div>
+                                    <div class="marginB"><span>電話 :  </span><?php echo $val['clientPhone'];?></div>
+                                    <div class="marginB"><span>票種 :  </span><?php echo $val['type'];?></div>
+                                    <div class="marginB"><span>張數 :  </span><?php echo $val['number'];?></div>
+                                    <div><span class="f">--車程 :  <?php echo $val['start'];?> - <?php echo $val['end'];?></span></div>
+                                    <div class="marginB"><span>乘車日期 :  </span><?php echo $val['date'];?></div>
+                                    <div class="marginB"><span>乘車時間 :  </span><?php echo substr($val['time'],0,-3);?></div>
                                     
                                     
-                                    <div class="marginB"><span>座位:</span><?php echo $val['seat'];?></div>
-                                    <div class="marginB"><span>訂票時間:</span><?php echo $val['orderTime'];?></div>
-                                    <div class="marginB"><span>總共金額:</span><?php echo $val['total'];?></div>
+                                    <div class="marginB"><span>座位 :  </span><?php echo $val['seat'];?></div>
+                                    <div class="marginB"><span>訂票時間 :  </span><?php echo $val['orderTime'];?></div>
+                                    <div class="marginB"><span>總共金額 :  </span><?php echo $val['total'];?></div>
                                     
                                     <div>------------------------------------------------------</div>
-                                    <div class="marginB"><span style="color:red;">取票代碼:</span><?php echo $val['ticrand'];?></div>
+                                    <div class="marginB"><span style="color:red;">取票代碼 :  </span><?php echo $val['ticrand'];?></div>
+                                  *請於三日內，使用此代碼至便利商店輸入後取票
                                   <?php }?>
                                 </div>
                             </div>

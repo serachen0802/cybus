@@ -29,7 +29,7 @@
                     </li>
                     
                     <li>
-                        <a href="#">我的車票</a>
+                        <a href="Search1.php">我的車票</a>
                     </li>
                     <li>
                         <a href="#">連絡我們</a>

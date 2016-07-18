@@ -51,14 +51,20 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-12 col-xs-12">
                                 <div class="SearchBox">
-                                    <h1>查詢車票</h1>
+                                    <!--<h1>查詢車票</h1>-->
                                 <div class="SearchForm">
-                                <div>身分證字號</div>
+                                <div class="do">--請輸入下列資訊查詢個人目前已訂購票卷</div>
+                              <div class="do">身分證字號
                                     <input type="text" name="clientId" required="required"/>
-                                <div>電話</div>
+                                    </div>
+                                <div class="do">電話
                                     <input type="text" name="clientPhone" required="required"/>
+                                    </div>
                                 <div>
                                     <input type ="submit" name ="btnok" class="btn sear" value ="確認"/>
+                                    
+                                    <input type ="reset" name ="reset" class="btn sear" value ="清除重填"/>
+                                    
                                 </div>    
                             </div>
                         </div> 
