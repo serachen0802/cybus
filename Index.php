@@ -105,8 +105,30 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="col-md-6 col-sm-12 col-xs-12">
-
+                         <div class="SearchBox">
+                             
+                            <h1>最新消息</h1>
+                            <div class="SearchForm">
+                                <div class="FormOne">
+                                   <table>
+                                       
+                                       <tr>
+                                           <td ><a class="news">123</a></td>
+                                       </tr>
+                                       <tr>
+                                           <td><a class="news">456</a></td>
+                                       </tr>
+                                       <tr>
+                                           <td>789</td>
+                                       </tr>
+                                   </table>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -161,10 +183,8 @@
 
                         }
                     })
-                    // }).trigger('change');
-
+                    
                 //抓取相對應的城市
-
                 $("#city1").change(function() {
                     var Val = $(this).val();
                     $.ajax({

@@ -1,9 +1,6 @@
 <?php
 header("Content-Type:text/html; charset=utf-8");
 require("connect/connect.php");
-// if($backdate==""){
-//         header("location:Index.php");
-//     }
 
 $backdate = $_POST['backdate'];
 $oid = $_POST['oid'];
@@ -11,11 +8,10 @@ $backstart=$_POST['backstart'];
 $backend=$_POST['backend'];
 // echo $backstart,"<br>";
 // echo $backend,"<br>";
-
-    $a = $db->query(" SELECT *, (SELECT SUM(number) FROM Corder where sid=BusDate.sid AND did=BusDate.did) AS Seated
-    FROM BusDate INNER JOIN BusSchedule ON BusSchedule.sid=BusDate.sid WHERE BusDate.date='".$backdate."' 
-    AND BusSchedule.start='".$backstart."'
-    AND BusSchedule.end='".$backend."'");
+    $a = $db->query(" SELECT *, (SELECT SUM(number) FROM bus_corder where sid=bus_date.sid AND did=bus_date.did) AS Seated
+    FROM bus_date INNER JOIN bus_schedule ON bus_schedule.sid=bus_date.sid WHERE bus_date.date='".$backdate."' 
+    AND bus_schedule.start='".$backstart."'
+    AND bus_schedule.end='".$backend."'");
     $data = $a->fetchAll(PDO::FETCH_ASSOC);
 
 ?>

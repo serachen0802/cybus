@@ -2,9 +2,6 @@
 header("Content-Type:text/html; charset=utf-8");
 require("connect/connect.php");
 
-
-
-
 $sid=$_POST['sid'];
 $did=$_POST['did'];
 // $sid=1;
@@ -14,22 +11,8 @@ $name=$_POST['name'];
 $clientId=$_POST['clientId'];
 $phone=$_POST['phone'];
 
-// echo $sid;
-
-    $a = $db->query(" SELECT * FROM BusDate INNER JOIN BusSchedule ON BusDate.sid=BusSchedule.sid
-    WHERE BusDate.sid='".$sid. "'and BusDate.did='".$did."'");
+    $a = $db->query(" SELECT * FROM bus_date INNER JOIN bus_schedule ON bus_date.sid=bus_schedule.sid
+    WHERE bus_date.sid='".$sid. "'and bus_date.did='".$did."'");
     $data = $a->fetchAll(PDO::FETCH_ASSOC);
-// foreach($data as $key => $value){
-
-// echo $value['sid'].$value['did'].$value['time'];
-// }
-
-
-// echo $checkbox.$name.$clientId.$phone;
-
-
-
-
-
 
 ?>

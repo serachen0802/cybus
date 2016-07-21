@@ -5,8 +5,8 @@
     // if($backdate==""){
     //     header("location:Index.php");
     // }
-    $a = $db->query(" SELECT * FROM Corder INNER JOIN BusSchedule ON Corder.sid=BusSchedule.sid 
-    INNER JOIN BusDate ON Corder.did=BusDate.did
+    $a = $db->query(" SELECT * FROM bus_corder INNER JOIN bus_schedule ON bus_corder.sid=bus_schedule.sid 
+    INNER JOIN bus_date ON bus_corder.did=bus_date.did
     WHERE oid='".$oid."'");
     $data = $a->fetchAll(PDO::FETCH_ASSOC);
     

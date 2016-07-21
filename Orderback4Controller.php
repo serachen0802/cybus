@@ -6,13 +6,12 @@ $oid=$_POST['oid'];
 $sid=$_POST['sid'];
 $did=$_POST['did'];
 $seat=$_POST['snum'];
-
 // echo $oid,"<br>";
 // echo $sid,"<br>";
 // echo $did,"<br>";
 // echo $seat,"<br>";
 
-$a = $db->query(" SELECT * FROM Corder WHERE oid='".$oid."'");
+$a = $db->query(" SELECT * FROM bus_corder WHERE oid='".$oid."'");
     $data = $a->fetchAll(PDO::FETCH_ASSOC);
     foreach($data as $key => $value){
         $clientId=$value['clientId'];
@@ -24,19 +23,8 @@ $a = $db->query(" SELECT * FROM Corder WHERE oid='".$oid."'");
         $TotalPrice=$value['total'];
         $ticrand=$value['ticrand'];
     }
-    
-// echo $clientId,"<br>";
-// echo $name,"<br>";
-// echo $phone,"<br>";
-// echo $ordertime,"<br>";
-// echo $ticket,"<br>";
-// echo $TicketNumr,"<br>";
-// echo $TotalPrice,"<br>";
-// echo $ticrand,"<br>";
-    
 
-
-$tins = $db->prepare("insert into `Corder` " .
+$tins = $db->prepare("insert into `bus_corder` " .
             "(`sid`,`did`,`clientId`,`clientName`,`clientPhone`,`seat`,`orderTime`,`type`,`number`,`total`,`ticrand`)".
             "values(:sid,:did,:clientId,:clientName,:clientPhone,:seat,:orderTime,:type,:number,:total,:ticrand)"
           );
@@ -48,15 +36,13 @@ $tins->execute(array(
             ':clientPhone'=>$phone,
             ':seat'=>$seat,
             ':orderTime'=>$ordertime,
-            ':type'=>$ticket,
+            ':type'=>"來回票-回程",
             ':number'=>$TicketNumr,
             ':total'=>$TotalPrice,
             ':ticrand'=>$ticrand
         ));
         
         $oid2 = $db->lastInsertId();
-
-
 
 header('location:Orderback4.php?oid2='.$oid2.'&oid='.$oid);
 

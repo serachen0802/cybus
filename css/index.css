@@ -154,3 +154,13 @@ h1 {
 .FormBtn {
     float: right;
 }
+
+.clearfix {
+    clear: both;
+}
+
+.news{
+    color:red ;
+   
+    
+}

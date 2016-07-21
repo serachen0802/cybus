@@ -62,7 +62,7 @@ require("OrderbackFinsh.php");
                                     <div class="marginB"><span>訂票姓名 :  </span><?php echo "  ".$oid['clientName'];?></div>
                                     <div class="marginB"><span>身分證字號 :  </span><?php echo $oid['clientId'];?></div>
                                     <div class="marginB"><span>電話 :  </span><?php echo $oid['clientPhone'];?></div>
-                                    <div class="marginB"><span>票種 :  </span><?php echo $oid['type'];?></div>
+                                    <div class="marginB"><span>票種 :  </span><?php echo $type;?></div>
                                     <div class="marginB"><span>張數 :  </span><?php echo $oid['number'];?></div>
         
                                     <div><span class="f">--去程 :  <?php echo $oid['start'];?> - <?php echo $oid['end'];?></span></div>

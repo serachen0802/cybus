@@ -2,9 +2,6 @@
 header("Content-Type:text/html; charset=utf-8");
 require("connect/connect.php");
 
-
-
-
 $sid=$_POST['sid'];
 $did=$_POST['did'];
 $clientId=$_POST['clientId'];
@@ -26,6 +23,7 @@ $ticrand=substr(strtotime($date),-7).substr($clientId,-3);
 $backstart=$_POST['backstart'];
 $backend=$_POST['backend'];
 
+// echo $ticket,"</br>";
 
 // mysql_query("INSERT INTO Corder (sid, did, clientId,clientName,clientPhone,,seat,orderTime,type,number,total) 
 // VALUES ('$sid', '$did', '$clientId','$name','$phone','$seat','$ordertime','$ticket','$TicketNumr','$TotalPrice')");
@@ -45,12 +43,12 @@ $backend=$_POST['backend'];
 //         header('location:Order2.php');
 //             }else{
 
-if($ticket="來回票-去程"){
-    $ticket="來回票";
-}
+// if($ticket="來回票-去程"){
+//     $ticket="來回票";
+// }
+// echo $ticket,"</br>";
 
-
-$tins = $db->prepare("insert into `Corder` " .
+$tins = $db->prepare("insert into `bus_corder` " .
             "(`sid`,`did`,`clientId`,`clientName`,`clientPhone`,`seat`,`orderTime`,`type`,`number`,`total`,`ticrand`)".
             "values(:sid,:did,:clientId,:clientName,:clientPhone,:seat,:orderTime,:type,:number,:total,:ticrand)"
           );
@@ -71,26 +69,10 @@ $tins->execute(array(
         $oid = $db->lastInsertId();
 
     
-    
-    
 
-// $oid =mysql_insert_id();
 if($ticket1=="來回票-去程"){
   header('location:Orderback1.php?oid='.$oid);
     }else{
         header('location:Order4.php?oid='.$oid);
     }
 ?>
-<!--<html>-->
-<!--    <head>-->
-        
-<!--    </head>-->
-<!--    <body>-->
-<!--        <form method="post" action="Orderback1.php">-->
-<!--        <input type="hidden" name="oid" value=""/> -->
-<!--        </form>-->
-<!--    </body>-->
-<!--</html>-->
-<!--<script>-->
-<!--     $("form").submit();-->
-<!--</script>-->

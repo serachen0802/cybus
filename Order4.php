@@ -1,7 +1,5 @@
 <!DOCTYPE HTML>
 <?php
-
-
 $oid=$_GET["oid"];
 // echo $_SESSION["oid"]
 require("OrderFinshController.php");

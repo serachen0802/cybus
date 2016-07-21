@@ -247,9 +247,9 @@
     <input type="hidden" id='clientId' name="clientId" value="<?php echo $_POST['clientId'];?>"/>
     <input type="hidden" id='name' name="name" value="<?php echo $_POST['name'];?>"/>
     <input type="hidden" id='phone' name="phone" value="<?php echo $_POST['phone'];?>"/>
-    <input type="hidden" id="nnum" name="nnum" value="<?php echo $res1 ?>"/>
+    <input type="hidden" id="nnum" name="nnum" value="<?php echo $res1 ;?>"/>
     <input type="hidden" id="snum" name="snum" value=""/>
-    <input type="hidden" id="ticket" name="ticket"value="<?php echo $ticket?>"/>
+    <input type="hidden" id="ticket" name="ticket"value="<?php echo $ticket;?>"/>
     <input type="hidden" id="TicketNum" name="TicketNum"value="<?php echo $num;?>"/>
     <input type="hidden" id="TotalPrice" name="TotalPrice" value="<?php echo $total;?>"/>
     <input type="hidden" id="backstart" name="backstart" value="<?php echo $value['end'];?>"/>
