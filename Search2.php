@@ -22,17 +22,9 @@ require("Search2Controller.php");
                 <a href="Index.php"><img src="images/cybus.png" /></a>
             </div>
             <div class="menu">
-                <ul>
-                    <li>
-                        <a  href="Index.php">查詢及訂票</a>
-                    </li>
-                  
-                    <li>
-                        <a class="active" href="Search1.php">我的車票</a>
-                    </li>
-                    <li>
-                        <a href="#">連絡我們</a>
-                    </li>
+                 <ul>
+                    <li><a  href="Index.php">查詢及訂票</a></li>
+                    <li><a class="active">我的車票</a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>

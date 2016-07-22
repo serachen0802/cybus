@@ -135,7 +135,9 @@ h1 {
     clear: both;
     height: 40px;
 }
-
+td, th {
+    padding: 8px;
+}
 
 /*查詢按鈕*/
 
@@ -160,7 +162,11 @@ h1 {
 }
 
 .news{
-    color:red ;
-   
+    color:blue;
+    font-size:18px;
+    margin-right:180px;
     
+}
+.datec{
+    text-align:right;
 }

@@ -21,16 +21,8 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li>
-                        <a  href="Index.php">查詢及訂票</a>
-                    </li>
-                  
-                    <li>
-                        <a class="active">我的車票</a>
-                    </li>
-                    <li>
-                        <a href="#">連絡我們</a>
-                    </li>
+                    <li><a  href="Index.php">查詢及訂票</a></li>
+                    <li><a class="active">我的車票</a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>
@@ -54,11 +46,11 @@
                                     <!--<h1>查詢車票</h1>-->
                                 <div class="SearchForm">
                                 <div class="do">--請輸入下列資訊查詢個人目前已訂購票卷</div>
-                              <div class="do">身分證字號
-                                    <input type="text" name="clientId" required="required"/>
+                              <div class="do">
+                                    <input type="text" name="clientId" required="required" placeholder="身分證字號"/>
                                     </div>
-                                <div class="do">電話
-                                    <input type="text" name="clientPhone" required="required"/>
+                                <div class="do">
+                                    <input type="text" name="clientPhone" required="required" placeholder="電話"/>
                                     </div>
                                 <div>
                                     <input type ="submit" name ="btnok" class="btn sear" value ="確認"/>

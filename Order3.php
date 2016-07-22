@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" href="css/order3.css" type="text/css" />
 </head>
-
 <body>
     <form method="post" action="Order4Controller.php">
     <div class="header">
@@ -23,15 +22,8 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li>
-                        <a class="active" href="Index.php">查詢及訂票</a>
-                    </li>
-                    <li>
-                        <a href="Search1.php">我的車票</a>
-                    </li>
-                    <li>
-                        <a href="#">連絡我們</a>
-                    </li>
+                    <li><a class="active">查詢及訂票</a></li>
+                    <li><a href="Search1.php">我的車票</a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>
@@ -259,7 +251,6 @@
     
     <script type="text/javascript">
         $(function (){
-            
             
            $(".SeatBlock").click(function(){
                if ($(this).hasClass("NoSeat")) {

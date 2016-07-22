@@ -1,5 +1,4 @@
 <!DOCTYPE HTML>
-<?php //require("seatController.php");?>
 <?php
 if($_POST['sid']==""){
    echo "<script>alert('請選擇車次');</script>";
@@ -27,18 +26,10 @@ if($_POST['sid']==""){
                     <a href="Index.php"><img src="images/cybus.png" /></a>
                 </div>
                 <div class="menu">
-                    <ul>
-                        <li>
-                             <a class="active" href="Index.php">查詢及訂票</a>
-                        </li>
-                        
-                        <li>
-                            <a href="Search1.php">我的車票</a>
-                        </li>
-                        <li>
-                            <a href="#">連絡我們</a>
-                        </li>
-                    </ul>
+                <ul>
+                    <li><a class="active">查詢及訂票</a></li>
+                    <li><a href="Search1.php">我的車票</a></li>
+                </ul>
                 </div>
                 <div class="clearfix"></div>
             </div>
