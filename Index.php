@@ -13,6 +13,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
     <script type="text/javascript" src="javascript/Index.js"></script>
+    
+    
 </head>
 <body>
     <form method="post" action="List.php">
@@ -118,6 +120,6 @@
         </div>
         </div>
         </div>
-        <?php include('footer.php'); ?>
+        
     </form>
 </body>
