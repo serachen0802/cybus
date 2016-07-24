@@ -2,7 +2,6 @@
 <?php require("Orderback3Controller.php");?>
 
 <html>
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>我要訂票</title>
@@ -232,13 +231,11 @@
     <input type="hidden" id='oid' name="oid" value="<?php echo $_POST['oid'];?>"/>
     <input type="hidden" id="TicketNum" name="TicketNum"value="<?php echo $TicketNumr;?>"/>
 
-    
     <?php include('footer.php'); ?>
     
     <script type="text/javascript">
         $(function (){
-            
-            
+
            $(".SeatBlock").click(function(){
                if ($(this).hasClass("NoSeat")) {
                    return;
@@ -272,7 +269,6 @@
                     if ($(this).hasClass("Seating")) {
                         var id = $(this).attr("id");
                         snum.push(id);
-                        // $("form").submit();
                     };
                 });
                 
@@ -283,8 +279,6 @@
                     $("form").submit();
                 }
            });
-           
-
            $(".SeatBlock").each(function() {
               var noid = $(this).attr("id");  
               var nnum = $("#nnum").val(); // "1, 3, 19, 22"
@@ -292,10 +286,6 @@
               if (nnumArray.indexOf(noid) != -1) {//-1即為找不到
                    $(this).addClass("NoSeat"); 
               }
-            //   alert(nnum);                               
-            //   var IsNoSeat = nnum.includes(noid);   
-            //   if (IsNoSeat) {
-            //   }
            });
         });
     </script>

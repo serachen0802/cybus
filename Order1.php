@@ -3,7 +3,6 @@
 if($_POST['sid']==""){
    echo "<script>alert('請選擇車次');</script>";
     header("Refresh:0;url=Index.php");
-    
 }
 ?>
 <html>
@@ -80,8 +79,6 @@ if($_POST['sid']==""){
                                     <dt>六、取消訂票：</dt>
                                         <dd>請利用查詢功能查詢確認後方可取消訂票。</br><dd>
 
-
-                                    
                                 </div>
 
                                 <div class="agreeCheck">
@@ -106,8 +103,7 @@ if($_POST['sid']==""){
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
-                                    <!--</form>-->
-                                <!--<form id='sub2' method="post" action="Order2Controller.php">-->
+                                   
                                     <input type="hidden" id='sid' name="sid" value="<?php echo $_POST['sid'];?>"/>
                                     <input type="hidden" id='did' name="did" value="<?php echo $_POST['did'];?>"/>
                                 </form>
@@ -120,15 +116,6 @@ if($_POST['sid']==""){
         </div>
 
         <?php include('footer.php'); ?>
-    
-    
-    <script>
-    // $('#sub1').submit(function() {
-    // function sub(){
-    // $("#sub2").submit();
-    
-    // });
-    </script>
 </body>
 
 

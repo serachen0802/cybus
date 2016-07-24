@@ -23,30 +23,6 @@ $ticrand=substr(strtotime($date),-7).substr($clientId,-3);
 $backstart=$_POST['backstart'];
 $backend=$_POST['backend'];
 
-// echo $ticket,"</br>";
-
-// mysql_query("INSERT INTO Corder (sid, did, clientId,clientName,clientPhone,,seat,orderTime,type,number,total) 
-// VALUES ('$sid', '$did', '$clientId','$name','$phone','$seat','$ordertime','$ticket','$TicketNumr','$TotalPrice')");
-
-// 新增
-// 將購買資料存入資料庫
-//     $a = $db->query(" SELECT *
-//     FROM BusDate INNER JOIN BusSchedule ON BusSchedule.sid=BusDate.sid WHERE BusDate.date='".$backdate."' 
-//     AND BusSchedule.start='".$backstart."'
-//     AND BusSchedule.end='".$backend."'");
-//     $data = $a->fetchAll(PDO::FETCH_ASSOC);
-//     foreach($data as $key => $value){
-//         $backdate = $value['date'];
-//             }
-//             if($backdate== ""){
-//         echo "<script>alert('此班車無回程,請購買單程票');</script>";
-//         header('location:Order2.php');
-//             }else{
-
-// if($ticket="來回票-去程"){
-//     $ticket="來回票";
-// }
-// echo $ticket,"</br>";
 
 $tins = $db->prepare("insert into `bus_corder` " .
             "(`sid`,`did`,`clientId`,`clientName`,`clientPhone`,`seat`,`orderTime`,`type`,`number`,`total`,`ticrand`)".

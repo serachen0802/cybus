@@ -2,7 +2,6 @@
 <?php require("Orderback2Controller.php");?>
 
 <html>
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>路線時刻</title>
@@ -60,16 +59,8 @@
                                 
 
                                 <?php 
-                            // $Num = count($data);
-                            // if ($Num == 0) {
-                            //     echo "<script>alert('查無資料,請重新查詢!');</script>";
-                            //     header("Refresh:0;url=Index.php");
-                            // }
-                            // else {
                                 foreach($data as $key => $value)
                                 {
-                                
-                                
                                 ?>
                                 <tr>
                                     <td><?php echo $value['start'];?></td>
@@ -80,8 +71,6 @@
                                     <td><?php
                                        $time1 = strtotime ( $value['date'].$value['time'] );
                                        $time2 = strtotime(date('Y-m-d H:i:s',time()+8*60*60));
-                                    //   echo $value['date'].$value['time'],"<br>";
-                                    //   echo date('Y-m-d H:i:s',time()+8*60*60);
                                         if ($time1 > $time2) {
                                             echo '<button type="button" class="btn" onclick="SubmitForm(' . $value['sid'] .',' . $value['did'] .')">訂票</button>';  
                                         }
@@ -89,43 +78,26 @@
                                 </tr>
                                 <?php  }?>
                                
-                                
                             </tbody>
                         </table>
-                        
-                        
-                        
+
                         <form method="post" action="Orderback3.php" >
                             <input type="hidden" id="sid" name="sid" />
                             <input type="hidden" id="did" name="did" />
                             <input type="hidden" name="oid" value="<?php echo $oid;?>"/>
                         </form>
-                        <!--<form method="post" action="seatController.php" id="form2">-->
-                        <!--    <input type="hidden" id="sid1" name="sid" />-->
-                        <!--    <input type="hidden" id="did1" name="did" />-->
-                        <!--</form>-->
-                       
                     </div>
-                     
                 </div>
             </div>
         </div>
     </div>
-   
-     
-
     <?php include('footer.php'); ?>
     <script>
         function SubmitForm(sid, did) {
             $("#sid").val(sid);
             $("#did").val(did);
-       
-            
             $("form").submit();
-            
         }
     </script>
 </body>
-
-
 </html>

@@ -4,8 +4,6 @@ require("connect/connect.php");
 
 $sid=$_POST['sid'];
 $did=$_POST['did'];
-// $sid=1;
-// $did=2;
 $checkbox=$_POST['checkbox'];
 $name=$_POST['name'];
 $clientId=$_POST['clientId'];

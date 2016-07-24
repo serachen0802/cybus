@@ -6,8 +6,7 @@ $backdate = $_POST['backdate'];
 $oid = $_POST['oid'];
 $backstart=$_POST['backstart'];
 $backend=$_POST['backend'];
-// echo $backstart,"<br>";
-// echo $backend,"<br>";
+
     $a = $db->query(" SELECT *, (SELECT SUM(number) FROM bus_corder where sid=bus_date.sid AND did=bus_date.did) AS Seated
     FROM bus_date INNER JOIN bus_schedule ON bus_schedule.sid=bus_date.sid WHERE bus_date.date='".$backdate."' 
     AND bus_schedule.start='".$backstart."'

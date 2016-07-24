@@ -1,7 +1,7 @@
 <?php
 header("Content-Type:text/html; charset=utf-8");
 require("connect/connect.php");
-// $btn=$_POST['btnok'];
+
 $city1=$_POST['city1'];
 $city2=$_POST['city2'];
 $orderdate=strtotime($_POST['orderdate']);

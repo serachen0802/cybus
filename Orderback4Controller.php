@@ -6,10 +6,6 @@ $oid=$_POST['oid'];
 $sid=$_POST['sid'];
 $did=$_POST['did'];
 $seat=$_POST['snum'];
-// echo $oid,"<br>";
-// echo $sid,"<br>";
-// echo $did,"<br>";
-// echo $seat,"<br>";
 
 $a = $db->query(" SELECT * FROM bus_corder WHERE oid='".$oid."'");
     $data = $a->fetchAll(PDO::FETCH_ASSOC);

@@ -7,8 +7,6 @@ if($_POST['price']==""){
     header("Refresh:0;url=Index.php");
 }
 
-
-
 $price=$_POST['price'];
 $sid=$_POST['sid'];
 $did=$_POST['did'];
@@ -21,8 +19,6 @@ $num=$_POST['num'];//張數
 $Inum=(Int)$num;
 $Iprice=(Int)$price;
 $total=$Inum * $Iprice ;//總金額
-
-// var_dump($Iprice);
 
     $a = $db->query(" SELECT * FROM bus_date INNER JOIN bus_schedule ON bus_date.sid=bus_schedule.sid
     WHERE bus_date.sid='".$sid. "' and bus_date.did='".$did."'");
@@ -44,9 +40,7 @@ $total=$Inum * $Iprice ;//總金額
     foreach($data2 as $k => $val){
         $res.=$val['seat'].",";
     }
-    // echo $res;
+
     $res1=substr($res,0,-1);
-    // var_dump ($res1);
-    $output = explode(",", $res1);
 
 ?>

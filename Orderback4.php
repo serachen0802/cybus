@@ -1,12 +1,9 @@
 <?php
 $oid2=$_GET["oid2"];
 $oid=$_GET["oid"];
-// echo $_SESSION["oid"]
-// require(".php");
 require("OrderbackFinsh.php");
 ?>
 <html>
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>我要訂票</title>
@@ -59,15 +56,12 @@ require("OrderbackFinsh.php");
         
                                     <div><span class="f">--去程 :  <?php echo $oid['start'];?> - <?php echo $oid['end'];?></span></div>
                                     <div class="marginc"><span> </span></div>
-                                    <!--<div class="marginB"><span>起站:</span></div>-->
-                                    <!--<div class="marginB"><span>迄站:</span></div>-->
                                     <div class="marginB"><span>乘車日期 :  </span><?php echo $oid['date'];?></div>
                                     <div class="marginB"><span>乘車時間 :  </span><?php echo substr($oid['time'],0,-3);?></div>
                                     <div class="marginB"><span>座位 :  </span><?php echo $oid['seat'];?></div>
                                     <div><span  class="f">--回程 :  <?php echo $oid2['start'];?> - <?php echo $oid2['end'];?></span></div>
                                     <div class="marginc"><span> </span></div>
-                                    <!--<div class="marginB"><span>起站:</span></div>-->
-                                    <!--<div class="marginB"><span>迄站:</span></div>-->
+
                                     <div class="marginB"><span>乘車日期 :  </span><?php echo $oid2['date'];?></div>
                                     <div class="marginB"><span>乘車時間 :  </span><?php echo substr($oid2['time'],0,-3);?></div>
                                     <div class="marginB"><span>座位 :  </span><?php echo $oid2['seat'];?></div>
@@ -77,7 +71,7 @@ require("OrderbackFinsh.php");
                                     <div class="marginB" ><span style="color:red;">取票代碼 :  </span><?php echo $oid['ticrand'];?></div>
                                     
                                     *請於三日內，使用此代碼至便利商店輸入後取票
-                                  <?php //}?>
+                                  
                                 </div>
                             </div>
                         </div>
@@ -87,15 +81,6 @@ require("OrderbackFinsh.php");
         </div>
 
         <?php include('footer.php'); ?>
-    
-    
-    <script>
-    // $('#sub1').submit(function() {
-    // function sub(){
-    // $("#sub2").submit();
-    
-    // });
-    </script>
     </form>
 </body>
 

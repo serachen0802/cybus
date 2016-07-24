@@ -1,9 +1,7 @@
 <!DOCTYPE HTML>
 <?php require("Order2Controller.php");?>
 
-
 <html>
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>我要訂票</title>
@@ -31,7 +29,6 @@
             <div class="clearfix"></div>
         </div>
     </div>
-
     <div class="background-image">
         <div class="container">
             <div class="row">
@@ -99,7 +96,6 @@
                             <input type="hidden" id='name' name="name" value="<?php echo $_POST['name'];?>"/>
                             <input type="hidden" id='clientId' name="clientId" value="<?php echo $_POST['clientId'];?>"/>
                             <input type="hidden" id='phone' name="phone" value="<?php echo $_POST['phone'];?>"/>
-                            <!--<input type="hidden" id='total' name="total"/>-->
                             <input type="hidden" name="time" value='<?php echo substr($value['time'],0,-3);?>'/>
                             <input type="hidden" id='date' name="date" value="<?php echo $value['date']; ?>"/>
                             <input type="hidden" id='start' name="start" value="<?php echo $value['start']; ?>"/>
@@ -112,7 +108,6 @@
         </div>
     </div>
    
-    
     <?php include('footer.php'); ?>
     
     <script type="text/javascript">

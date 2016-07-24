@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <?php
 $oid=$_GET["oid"];
-// echo $_SESSION["oid"]
 require("OrderFinshController.php");
 
 ?>
@@ -78,14 +77,7 @@ require("OrderFinshController.php");
         </div>
 
         <?php include('footer.php'); ?>
-    
-    
     <script>
-    // $('#sub1').submit(function() {
-    // function sub(){
-    // $("#sub2").submit();
-    
-    // });
     </script>
     </form>
 </body>

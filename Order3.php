@@ -309,10 +309,6 @@
               if (nnumArray.indexOf(noid) != -1) {//-1即為找不到
                    $(this).addClass("NoSeat"); 
               }
-            //   alert(nnum);                               
-            //   var IsNoSeat = nnum.includes(noid);   
-            //   if (IsNoSeat) {
-            //   }
            });
         });
     </script>

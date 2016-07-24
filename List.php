@@ -2,7 +2,6 @@
 <?php require("ListController.php");?>
 
 <html>
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>路線時刻</title>
@@ -13,7 +12,6 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" href="css/list.css" type="text/css" />
 </head>
-
 <body>
     <div class="header">
         <div class="container">
@@ -60,7 +58,6 @@
                             </thead>
                             <tbody>
                                 
-
                                 <?php 
                             $Num = count($data);
                             if ($Num == 0) {
@@ -70,8 +67,6 @@
                             else {
                                 foreach($data as $key => $value)
                                 {
-                                
-                                
                                 ?>
                                 <tr>
                                     <td><?php echo $value['start'];?></td>
@@ -86,8 +81,7 @@
                                     <?php
                                        $time1 = strtotime ( $value['date'].$value['time'] );
                                        $time2 = strtotime(date('Y-m-d H:i:s',time()+8*60*60));
-                                    //   echo $value['date'].$value['time'],"<br>";
-                                    //   echo date('Y-m-d H:i:s',time()+8*60*60);
+
                                         if ($time1 > $time2) {
                                             echo '<button type="button" class="btn" onclick="SubmitForm(' . $value['sid'] .',' . $value['did'] .')">訂票</button>';  
                                         }
@@ -95,21 +89,14 @@
                                     </td>
                                 </tr>
                                 <?php } }?>
-                               
-                                
+
                             </tbody>
                         </table>
-                        
-                        
                         
                         <form method="post" action="Order1.php" >
                             <input type="hidden" id="sid" name="sid" />
                             <input type="hidden" id="did" name="did" />
                         </form>
-                        <!--<form method="post" action="seatController.php" id="form2">-->
-                        <!--    <input type="hidden" id="sid1" name="sid" />-->
-                        <!--    <input type="hidden" id="did1" name="did" />-->
-                        <!--</form>-->
                        
                     </div>
                      
@@ -118,8 +105,6 @@
         </div>
     </div>
    
-     
-
     <?php include('footer.php'); ?>
     <script>
         function SubmitForm(sid, did) {

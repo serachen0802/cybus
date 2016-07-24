@@ -13,9 +13,7 @@ require("Search2Controller.php");
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" href="css/search2.css" type="text/css" />
 </head>
-
 <body>
-    
     <div class="header">
         <div class="container">
             <div class="logo">
@@ -99,28 +97,21 @@ require("Search2Controller.php");
     <script type="text/javascript">
         function mysub(oid){
             var r = confirm("是否確定取消?");
-            
             if (r == true) {
-                // var oid3=$("#oid3").val(oid);
                  $.ajax({
                         url: 'SearchController.php',
                         type: 'POST',
                         data: {
                             oid: oid
                         },
-                        // datatype: 'json',
                         error: function(xhr) {
                             alert(xhr.status);
                         },
                         success: function(response) {
                           $("tr#" + oid).remove();  
-
                         }
                     });
-               
-            } else {
-                    // txt = "You pressed Cancel!";
-            }
+            } 
         }
     </script>
 </body>

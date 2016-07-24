@@ -2,7 +2,8 @@
     header("Content-Type:text/html; charset=utf-8");
     require ('connect/connect.php');
     
-    // function city2(){
+    
+    
     $city=$_POST['city1'];
     // $city='台北';
     $a = $db->query("SELECT * FROM bus_schedule WHERE start='".$city."'");

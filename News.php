@@ -60,6 +60,4 @@ if($nid==""){
         <?php include('footer.php'); ?>
 
 </body>
-
-
 </html>
