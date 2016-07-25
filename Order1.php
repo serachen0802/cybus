@@ -92,20 +92,23 @@ if($_POST['sid']==""){
                                 <div class="FormBlock">
                                     <div class="FormOne">
                                         <label>姓名</label>
-                                        <input type="text" name="name" required="required"/>
+                                        <input type="text" name="name" required="required" id="name"/>
                                     </div>
                                     <div class="FormOne">
                                         <label>身分證字號</label>
-                                        <input type="text" name="clientId" required="required"/>
+                                        <input type="text" name="clientId" required="required" id="clientId"/>
                                     </div>
                                     <div class="FormOne">
                                         <label>電話</label>
-                                        <input type="text" name="phone" required="required"/>
+                                        <input type="text" name="phone" required="required" id="phone"/>
                                     </div>
                                     <div class="SubmitBtn">
                                         <input type="submit" class="btn"  value="送出" />
                                     </div>
                                     <div class="clearfix"></div>
+                                </div>
+                                <div>
+                                    <input type="button" value="輸入資料" id="insertdata"></input>
                                 </div>
                                    
                                     <input type="hidden" id='sid' name="sid" value="<?php echo $_POST['sid'];?>"/>
@@ -119,7 +122,13 @@ if($_POST['sid']==""){
             </div>
         </div>
 
-      
+      <script>
+          $("#insertdata").click(function(){
+              $("#name").val("sera");
+              $("#phone").val("0912345678");
+              $("#clientId").val("F123456789");
+          })
+      </script>
 </body>
 
 

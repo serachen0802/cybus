@@ -51,17 +51,20 @@
                                 <div class="SearchForm">
                                 <div class="do">--請輸入下列資訊查詢個人目前已訂購票卷</div>
                               <div class="do">
-                                    <input type="text" name="clientId" required="required" placeholder="身分證字號"/>
+                                    <input type="text" name="clientId" required="required" id="clientId" placeholder="身分證字號"/>
                                     </div>
                                 <div class="do">
-                                    <input type="text" name="clientPhone" required="required" placeholder="電話"/>
+                                    <input type="text" name="clientPhone" required="required" id="clientPhone" placeholder="電話"/>
                                     </div>
                                 <div>
                                     <input type ="submit" name ="btnok" class="btn sear" value ="確認"/>
                                     
                                     <input type ="reset" name ="reset" class="btn sear" value ="清除重填"/>
                                     
-                                </div>    
+                                </div>   
+                                <div>
+                                   <input type="button" value="輸入資料" id="insertdata"></input>
+                                </div>
                             </div>
                         </div> 
                     </div>
@@ -72,6 +75,10 @@
    
     </form>
 </body>
-
-
+<script>
+        $("#insertdata").click(function(){
+              $("#clientPhone").val("0912345678");
+              $("#clientId").val("F123456789");
+        });
+</script>
 </html>
