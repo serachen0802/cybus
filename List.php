@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.min.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" href="css/list.css" type="text/css" />
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
@@ -28,8 +27,8 @@
                     <li><a href="Search1.php">我的車票</a></li>
                 </ul>
             <div class="clearfix"></div>
+            </div>
         </div>
-    </div>
 
     <div class="background-image">
         <div class="container">
@@ -57,7 +56,6 @@
                                     <th>半票</th>
                                     <th>來回票</th>
                                     <th>剩餘座位數</th>
-                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -103,7 +101,6 @@
                         </form>
                        
                     </div>
-                     
                 </div>
             </div>
         </div>
@@ -114,9 +111,7 @@
             $("#sid").val(sid);
             $("#did").val(did);
 
-            // alert(sid,did);
             $("form").submit();
-            
         }
     </script>
 </body>

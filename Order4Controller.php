@@ -24,7 +24,7 @@ $backstart=$_POST['backstart'];
 $backend=$_POST['backend'];
 
 
-$tins = $db->prepare("insert into `bus_corder` " .
+$tins = $db->prepare("INSERT INTO `bus_corder` " .
             "(`sid`,`did`,`clientId`,`clientName`,`clientPhone`,`seat`,`orderTime`,`type`,`number`,`total`,`ticrand`)".
             "values(:sid,:did,:clientId,:clientName,:clientPhone,:seat,:orderTime,:type,:number,:total,:ticrand)"
           );

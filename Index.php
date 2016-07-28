@@ -40,15 +40,15 @@
                     <div class="SearchBox">
                         <h1>乘車資訊</h1>
                         <div class="SearchForm">
-
+                            
                             <div class="FormOne">
                                 <div class="FormLeft">
                                     <p>起站</p>
                                 </div>
                                 <div class="FormRight">
                                     <select id="city1" name="city1">
-                                    <option value = "台北">台北</option>
-                                </select>
+                                        <option value = "台北">台北</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -58,9 +58,9 @@
                                 </div>
                                 <div class="FormRight">
                                     <select id="city2" name="city2">
-                                <option>台北</option>
-                                <option>桃園</option>
-                            </select>
+                                        <option>台北</option>
+                                        <option>桃園</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -72,6 +72,7 @@
                                     <input name='orderdate' id="orderdate" type="text" class="datenowpicker" require_onced="require_onced" />
                                 </div>
                             </div>
+                            
                             <div class="FormOne">
                                 <div class="FormLeft">
                                     <p>時間</p>
@@ -83,6 +84,7 @@
                                     <input name='ordertime2' id="ordertime2" type="text" class="timepicker" />
                                 </div>
                             </div>
+                            
                             <div class="FormOneBtn">
                                 <div class="FormBtn">
                                     <input type="button" value="查詢" id="btnok" name="btnok" />

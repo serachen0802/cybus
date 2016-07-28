@@ -84,7 +84,7 @@ if($_POST['sid']==""){
                                         <dd>請利用查詢功能查詢確認後方可取消訂票。</br><dd>
 
                                 </div>
-
+<!-------------------------------------基本資料------------------------------------->
                                 <div class="agreeCheck">
                                     <input type="checkbox" name="checkbox" value='check' required="required">
                                     <label>請閱讀並勾選同意</label>
@@ -123,6 +123,7 @@ if($_POST['sid']==""){
         </div>
 
       <script>
+    //   ---------------發表自動輸入資料-------------
           $("#insertdata").click(function(){
               $("#name").val("sera");
               $("#phone").val("0912345678");

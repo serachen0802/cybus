@@ -2,7 +2,6 @@
 
 // 資料庫連線
 
-
 $config['db']['dsn']='mysql:host=localhost; dbname=cybus; charset=utf8';
 
 // 資料庫的帳號密碼 >>> 要依照你的資料做設定

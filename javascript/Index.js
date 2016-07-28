@@ -4,9 +4,8 @@ $(function() {
             var now = new Date();
             var orderdate = new Date($("#orderdate").val());
 
-            if (orderdate + 1 < now) {
+            if (orderdate  < now) {
                 alert("請輸入正確日期");
-                alert(now);
             }
             else if ($("#ordertime1").val() != "" && $("#ordertime2").val() != "") {
                 var ordertime1 = new Date(now.toDateString() + " " + $("#ordertime1").val());
