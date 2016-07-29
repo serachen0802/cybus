@@ -305,7 +305,6 @@
                 }
            });
            
-
            $(".SeatBlock").each(function() {
               var noid = $(this).attr("id");  
               var nnum = $("#nnum").val(); // "1, 3, 19, 22"

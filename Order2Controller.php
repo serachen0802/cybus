@@ -10,6 +10,6 @@ $phone=$_POST['phone'];
 
     $a = $db->query(" SELECT * FROM bus_date INNER JOIN bus_schedule ON bus_date.sid=
     bus_schedule.sid WHERE bus_date.sid='".$sid. "'and bus_date.did='".$did."'");
-    $data = $a->fetchAll(PDO::FETCH_ASSOC);
+    $data = $a->fetch(PDO::FETCH_ASSOC);
 
 ?>

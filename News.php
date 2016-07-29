@@ -55,9 +55,9 @@ if($nid==""){
                     <div class="col-md-12">
                         <div class="block">
                             <div class="OrderContent">
-                                <div class="agreeTitle"><?php echo $value['title'];?></div>
+                                <div class="agreeTitle"><?php echo $data['title'];?></div>
                                 <div class="agreeContent">
-                                    <?php echo htmlspecialchars_decode($value['news']);?>
+                                    <?php echo htmlspecialchars_decode($data['news']);?>
                                
                             </div>
                         </div>

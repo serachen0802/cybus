@@ -49,25 +49,23 @@
                             <div class="ImTitle">訂票資訊</div>
                             <div class="ImOne">
                                 
-                                <?php foreach($data as $key => $value){?>
-                                
                                 <label>起迄站：</label>
-                                <label> <?php echo $value['start']; ?> - <?php echo $value['end']?></label>
+                                <label> <?php echo $data['start']; ?> - <?php echo $data['end']?></label>
                             </div>
                             <div class="clearfix"></div>
                             <div class="ImOne">
-                                <label>日期：</label><?php echo $value['date']; ?>
+                                <label>日期：</label><?php echo $data['date']; ?>
                             </div>
                             <div class="ImOne">
-                                <label>時間：</label><?php echo substr($value['time'],0,-3);?>
+                                <label>時間：</label><?php echo substr($data['time'],0,-3);?>
                             </div>
                             <div class="clearfix"></div>
                             <div class="ImOne">
                                 <label>票種：</label>
                                 <select id="TicketTypeSelect" name="price">
-                                    <option value="<?php echo $value['onePrice']; ?>">全票</option>
-                                    <option value="<?php echo $value['halfFare']; ?>">半票</option>
-                                    <option value="<?php echo $value['backAndForth']; ?>">來回票</option>
+                                    <option value="<?php echo $data['onePrice']; ?>">全票</option>
+                                    <option value="<?php echo $data['halfFare']; ?>">半票</option>
+                                    <option value="<?php echo $data['backAndForth']; ?>">來回票</option>
                                 </select>
                             </div>
                             <div class="clearfix"></div>
@@ -94,16 +92,16 @@
                             <div class="ImOne SubmitBtn">
                                 <input type="submit" class="btn" value="確認送出" />
                             </div>
-                            <?php }?>
+                          
                             <input type="hidden" id='sid' name="sid" value="<?php echo $_POST['sid'];?>"/>
                             <input type="hidden" id='did' name="did" value="<?php echo $_POST['did'];?>"/>
                             <input type="hidden" id='name' name="name" value="<?php echo $_POST['name'];?>"/>
                             <input type="hidden" id='clientId' name="clientId" value="<?php echo $_POST['clientId'];?>"/>
                             <input type="hidden" id='phone' name="phone" value="<?php echo $_POST['phone'];?>"/>
-                            <input type="hidden" name="time" value='<?php echo substr($value['time'],0,-3);?>'/>
-                            <input type="hidden" id='date' name="date" value="<?php echo $value['date']; ?>"/>
-                            <input type="hidden" id='start' name="start" value="<?php echo $value['start']; ?>"/>
-                            <input type="hidden" id='end' name="end" value="<?php echo $value['end']; ?>"/>
+                            <input type="hidden" name="time" value='<?php echo substr($data['time'],0,-3);?>'/>
+                            <input type="hidden" id='date' name="date" value="<?php echo $data['date']; ?>"/>
+                            <input type="hidden" id='start' name="start" value="<?php echo $data['start']; ?>"/>
+                            <input type="hidden" id='end' name="end" value="<?php echo $data['end']; ?>"/>
                             <div class="clearfix"></div>
                         </div>
                     </div>
